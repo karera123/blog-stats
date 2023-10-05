@@ -2,7 +2,6 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import {
@@ -10,6 +9,9 @@ import {
   RouterProvider
 } from "react-router-dom";
 import Error from './pages/Error/Error';
+import Home from './pages/Home';
+import Homework from './pages/Homework';
+import Layout from './components/Layout';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -17,8 +19,18 @@ const root = createRoot(container);
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Layout />,
     errorElement: <Error />,
+    children: [
+      {
+        index: true,
+        element: <Home />
+      },
+      {
+        path: 'homework',
+        element: <Homework />
+      }
+    ]
   },
 ], {
   basename: '/blog-stats'
