@@ -3,12 +3,17 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { HomeworkModel } from "../../models/homework";
 import parse from 'html-react-parser';
 import { useAppSelector } from '../../app/hooks';
+import { FadeLoader } from 'react-spinners';
 
 const Homework = () => {
   const params = useParams();
   const navigate = useNavigate();
 
   const [homework, setHomework] = React.useState<HomeworkModel | null>(null);
+
+  const noAnswer = React.useMemo(() => {
+    return <FadeLoader className='text-gray-700' />
+  }, []);
 
   const selectedHomework = React.useMemo(() => {
     return Number(params.homework) ?? 1;
@@ -59,9 +64,15 @@ const Homework = () => {
               <span className='font-bold font-serif text-lg mr-3'>Q:</span>
               <span className='font-semibold italic font-serif'>{elem.question}</span>
             </div>
-            <div id='answer' className='text-justify'>
+            <div id='answer' className='text-justify flex flex-row'>
               <span className='font-bold font-serif text-lg mr-3'>A:</span>
-              <span className={'font-serif ' + (!elem.answer && 'italic')}>{parseString(elem.answer ? elem.answer : 'No answer yet')}</span>
+              {
+                elem.answer
+                  ? <span className={'font-serif ' + (!elem.answer && 'italic')}>
+                    {parseString(elem.answer ? elem.answer : 'No answer yet')}
+                  </span>
+                  : noAnswer
+              }
             </div>
             {
               elem.refs &&
@@ -100,9 +111,15 @@ const Homework = () => {
               <span className='font-bold font-serif text-lg mr-3'>Q:</span>
               <span className='font-semibold italic font-serif'>{elem.question}</span>
             </div>
-            <div id='answer' className='text-justify'>
+            <div id='answer' className='text-justify flex flex-row'>
               <span className='font-bold font-serif text-lg mr-3'>A:</span>
-              <span className={'font-serif ' + (!elem.answer && 'italic')}>{parseString(elem.answer ? elem.answer : 'No answer yet')}</span>
+              {
+                elem.answer
+                  ? <span className={'font-serif ' + (!elem.answer && 'italic')}>
+                    {parseString(elem.answer ? elem.answer : 'No answer yet')}
+                  </span>
+                  : noAnswer
+              }
               {
                 elem.image &&
                 <img src={elem.image.path} alt={elem.image.alternativeName} />

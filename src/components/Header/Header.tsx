@@ -5,7 +5,7 @@ import { FaGithub } from "react-icons/fa6";
 const Header = () => {
 
   return (
-    <header className='p-5 bg-gray-700 flex flex-row fixed w-full'>
+    <header className='p-5 bg-gray-700 flex flex-row fixed w-full z-10'>
       <div className='flex-1'>
         <Link to='/'>
           <h1 className='text-white text-xl'>
