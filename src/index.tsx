@@ -9,9 +9,9 @@ import {
   RouterProvider
 } from "react-router-dom";
 import Error from './pages/Error/Error';
-import Home from './pages/Home';
-import Homework from './pages/Homework';
-import Layout from './components/Layout';
+import Home from './pages/Home/Home';
+import Layout from './components/Layout/Layout';
+import Homework from './pages/Homework/Homework'
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -27,11 +27,15 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: 'homework',
+        path: ':homework',
         element: <Homework />
+      },
+      {
+        path: '/error',
+        element: <Error />
       }
     ]
-  },
+  }
 ], {
   basename: '/blog-stats'
 });

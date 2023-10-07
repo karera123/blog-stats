@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.b-border-header {
+  border-top-color: #f0f0f0;
+  border-top-width: 1px;
+  border-top-style: solid;
+}
