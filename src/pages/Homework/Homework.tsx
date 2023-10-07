@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { HomeworkModel } from "../../models/homework";
 import parse from 'html-react-parser';
 import { useAppSelector } from '../../app/hooks';
-import { FadeLoader } from 'react-spinners';
+import { BeatLoader } from 'react-spinners';
 
 const Homework = () => {
   const params = useParams();
@@ -12,7 +12,11 @@ const Homework = () => {
   const [homework, setHomework] = React.useState<HomeworkModel | null>(null);
 
   const noAnswer = React.useMemo(() => {
-    return <FadeLoader className='text-gray-700' />
+    return <BeatLoader
+      className='text-gray-700 mt-2'
+      size={10}
+      speedMultiplier={0.5}
+    />
   }, []);
 
   const selectedHomework = React.useMemo(() => {
