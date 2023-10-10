@@ -37,7 +37,7 @@ const router = createBrowserRouter([
     ]
   }
 ], {
-  basename: '/blog-stats'
+  basename: '/blog-stats/#'
 });
 
 root.render(

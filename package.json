@@ -2,7 +2,7 @@
   "name": "blog-stats",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://karera123.github.io/blog-stats",
+  "homepage": "http://karera123.github.io/blog-stats/#",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
     "@testing-library/jest-dom": "^5.17.0",
