@@ -5,7 +5,7 @@ import { store } from './app/store';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider
 } from "react-router-dom";
 import Error from './pages/Error/Error';
@@ -16,7 +16,7 @@ import Homework from './pages/Homework/Homework'
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Layout />,
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
     ]
   }
 ], {
-  basename: '/blog-stats/#'
+  basename: '/'
 });
 
 root.render(

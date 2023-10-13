@@ -11,7 +11,7 @@ const Homework = () => {
 
   const [homework, setHomework] = React.useState<HomeworkModel | null>(null);
 
-  const noAnswer = React.useMemo(() => {
+  const loader = React.useMemo(() => {
     return <BeatLoader
       className='text-gray-700 mt-2'
       size={10}
@@ -70,13 +70,21 @@ const Homework = () => {
             </div>
             <div id='answer' className='text-justify flex flex-row'>
               <span className='font-bold font-serif text-lg mr-3'>A:</span>
-              {
-                elem.answer
-                  ? <span className={'font-serif ' + (!elem.answer && 'italic')}>
-                    {parseString(elem.answer ? elem.answer : 'No answer yet')}
-                  </span>
-                  : noAnswer
-              }
+              <div>
+                {
+                  elem.answer
+                    ? <span className={'font-serif ' + (!elem.answer && 'italic')}>
+                      {
+                        elem.answer
+                          ? typeof elem.answer === 'string'
+                            ? parseString(elem.answer ? elem.answer : 'No answer yet')
+                            : elem.answer
+                          : loader
+                      }
+                    </span>
+                    : loader
+                }
+              </div>
             </div>
             {
               elem.refs &&
@@ -115,19 +123,17 @@ const Homework = () => {
               <span className='font-bold font-serif text-lg mr-3'>Q:</span>
               <span className='font-semibold italic font-serif'>{elem.question}</span>
             </div>
-            <div id='answer' className='text-justify flex flex-row'>
+            <div id={'answer-app-' + index} className='text-justify flex flex-row'>
               <span className='font-bold font-serif text-lg mr-3'>A:</span>
-              {
-                elem.answer
-                  ? <span className={'font-serif ' + (!elem.answer && 'italic')}>
-                    {parseString(elem.answer ? elem.answer : 'No answer yet')}
-                  </span>
-                  : noAnswer
-              }
-              {
-                elem.image &&
-                <img src={elem.image.path} alt={elem.image.alternativeName} />
-              }
+              <div>
+                {
+                  elem.answer
+                    ? typeof elem.answer === 'string'
+                      ? parseString(elem.answer ? elem.answer : 'No answer yet')
+                      : elem.answer
+                    : loader
+                }
+              </div>
             </div>
           </div>
         })

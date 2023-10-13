@@ -1,4 +1,8 @@
-{
+import { HomeworkModel } from "../../models/homework";
+import CSharp from "./application/hw1/CSharp";
+import CanvasHw1 from "./application/hw1/Canvas";
+
+const data: HomeworkModel = {
   "title": "Homework 1 - 05/10/2023",
   "theories": [
     {
@@ -41,19 +45,28 @@
     },
     {
       "question": "Briefly describe the main experiment designs.",
-      "answer": ""
+      "answer": "Here are the different experimental design:<br /><kw>Completely Randomized Design</kw>. In this design, participants are randomly assigned to one of two or more groups, and each group is exposed to a different treatment or condition.<br /><kw>Randomized Block Design</kw>. This design involves dividing participants into blocks based on a specific characteristic, such as age or gender, and then randomly assigning participants within each block to one of two or more treatment groups.<br/><kw>Factorial Design</kw>. In a factorial design, participants are randomly assigned to one of several groups, each of which receives a different combination of two or more independent variables.<br />"
+        + "<kw>Repeated Measures Design</kw>. In this design, each participant is exposed to all of the different treatments or conditions, either in a random order or in a predetermined order.<br />"
+        + "<kw>Crossover Design</kw>. This design involves randomly assigning participants to one of two or more treatment groups, with each group receiving one treatment during the first phase of the study and then switching to a different treatment during the second phase.",
+      "refs": [
+        {
+          "name": "Research Method",
+          "href": "https://researchmethod.net/experimental-design/"
+        }
+      ]
     }
   ],
   "applications": [
     {
       "question": "Write a program in C# or VB.NET that creates a window containing a single line, point, circle, rectangle.",
-      "answer": "",
-      "imagePath": ""
+      answer: <CSharp />,
     },
     {
       "question": "Write a program in JavaScript or TypeScript that creates a window containing a single line, point, circle, rectangle.",
-      "answer": "",
-      "imagePath": ""
+      answer: <CanvasHw1 />,
+      "image": []
     }
   ]
 }
+
+export default data;

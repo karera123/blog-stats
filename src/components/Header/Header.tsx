@@ -14,7 +14,7 @@ const Header = () => {
         </Link>
       </div>
       <div>
-        <a href='https://github.com/karera123/blog-stats'><FaGithub size={24} color='white' /></a>
+        <a href='https://github.com/karera123/blog-stats' target='_blank' rel='noreferrer'><FaGithub size={24} color='white' /></a>
       </div>
     </header>
   )
