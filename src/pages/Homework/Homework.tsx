@@ -45,6 +45,18 @@ const Homework = () => {
     return parse(reworkText);
   }, []);
 
+  const renderAnswer = React.useCallback((answer?: string | JSX.Element) => {
+    return answer
+      ? <span className={'font-serif'}>
+        {
+          typeof answer === 'string'
+            ? parseString(answer)
+            : answer
+        }
+      </span>
+      : loader
+  }, [loader, parseString]);
+
   return (
     <div>
       {/* Title */}
@@ -71,19 +83,7 @@ const Homework = () => {
             <div id='answer' className='text-justify flex flex-row'>
               <span className='font-bold font-serif text-lg mr-3'>A:</span>
               <div>
-                {
-                  elem.answer
-                    ? <span className={'font-serif ' + (!elem.answer && 'italic')}>
-                      {
-                        elem.answer
-                          ? typeof elem.answer === 'string'
-                            ? parseString(elem.answer ? elem.answer : 'No answer yet')
-                            : elem.answer
-                          : loader
-                      }
-                    </span>
-                    : loader
-                }
+                {renderAnswer(elem.answer)}
               </div>
             </div>
             {
@@ -126,13 +126,7 @@ const Homework = () => {
             <div id={'answer-app-' + index} className='text-justify flex flex-row'>
               <span className='font-bold font-serif text-lg mr-3'>A:</span>
               <div>
-                {
-                  elem.answer
-                    ? typeof elem.answer === 'string'
-                      ? parseString(elem.answer ? elem.answer : 'No answer yet')
-                      : elem.answer
-                    : loader
-                }
+                {renderAnswer(elem.answer)}
               </div>
             </div>
           </div>
