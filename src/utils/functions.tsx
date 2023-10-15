@@ -1,3 +1,14 @@
 export function createLink(text: string, href: string) {
-  return <a className="text-blue-700 font-bold" href={href} target='_blank' rel="noreferrer">{text}</a>
+  if (href === '#')
+    return <span className='font-semibold text-red-700 line-through	'>
+      {text}
+    </span>
+  else return <a
+    className='font-semibold text-blue-700 '
+    href={href}
+    target='_blank'
+    rel="noreferrer"
+  >
+    {text}
+  </a>
 }
