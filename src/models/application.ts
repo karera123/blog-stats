@@ -7,7 +7,7 @@ interface Image {
 }
 
 export interface ApplicationModel {
-  question: string,
+  question: string | JSX.Element,
   answer?: string | JSX.Element,
   refs?: RefModel[],
   image?: Image[],

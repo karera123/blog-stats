@@ -1,4 +1,5 @@
 import React from 'react'
+import { createLink } from '../../../../utils/functions';
 
 const CanvasHw1 = () => {
   const canvasRef = React.useRef(null);
@@ -35,7 +36,7 @@ const CanvasHw1 = () => {
   }, []);
 
   return (<>
-    <span>The code is accessible through this <a className="text-blue-700 font-bold" href='https://gitlab.com/homeworks2282541/homework-1/js' target='_blank' rel="noreferrer">link</a>.</span>
+    <span>The code is accessible through this {createLink('link', 'https://gitlab.com/homeworks2282541/homework-1/js')}.</span>
     <canvas ref={canvasRef} height={200} width={500} />
   </>)
 }

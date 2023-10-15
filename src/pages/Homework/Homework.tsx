@@ -67,9 +67,12 @@ const Homework = () => {
       <hr />
 
       {/* Theory */}
-      <div className='font-serif font-semibold mt-10 text-xl'>
-        Theory
-      </div>
+      {
+        homework?.theories && homework?.theories.length > 0 &&
+        <div className='font-serif font-semibold mt-10 text-xl'>
+          Theory
+        </div>
+      }
       {
         homework?.theories.map((elem, index) => {
           return <div
@@ -110,9 +113,12 @@ const Homework = () => {
       <hr />
 
       {/* Application */}
-      <div className='font-serif font-semibold mt-16 text-xl'>
-        Application
-      </div>
+      {
+        homework?.applications && homework?.applications.length > 0 &&
+        <div className='font-serif font-semibold mt-16 text-xl'>
+          Application
+        </div>
+      }
       {
         homework?.applications.map((elem, index) => {
           return <div
