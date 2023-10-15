@@ -54,10 +54,10 @@ const Graph = () => {
   // organize data
   React.useEffect(() => {
     /**
-     * Columns needed
-     *    Background (degree) [1]
+     * Columns selected
+     *    Dream Works         [23]
      *    Ambitious (0-5)     [5]
-     *    Sex                 [13]
+     *    Age                 [14]
      */
 
     const header: string[] = [
