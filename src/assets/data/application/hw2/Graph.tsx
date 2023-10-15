@@ -4,7 +4,7 @@ import Papa from 'papaparse';
 
 interface Table {
   title: string,
-  data: (string | number)[][]
+  data: (string | number | JSX.Element)[][]
 }
 
 const Graph = () => {
@@ -84,16 +84,16 @@ const Graph = () => {
     const set2: string[] = [];
     const set3: string[] = [];
 
-    const table1: (string | number)[][] = [[titleTable1, ...header]];
-    const table2: (string | number)[][] = [[titleTable2, ...header]];
-    const table3: (string | number)[][] = [[titleTable3, ...header]];
+    const table1: (string | number | JSX.Element)[][] = [[titleTable1, ...header]];
+    const table2: (string | number | JSX.Element)[][] = [[titleTable2, ...header]];
+    const table3: (string | number | JSX.Element)[][] = [[titleTable3, ...header]];
 
-    const generateTableData = (elem: string, array: string[], set: string[], table: (string | number)[][]) => {
+    const generateTableData = (elem: string, array: string[], set: string[], table: (string | number | JSX.Element)[][]) => {
       const modifiedElem = elem.toLowerCase().trim();
       if (!set.includes(modifiedElem)) {
         set.push(modifiedElem);
         table.push([
-          elem || 'No response',
+          elem || <i>n/a</i>,
           getAbsoluteFrequency(elem, array),
           getRelativeFrequency(elem, array).toFixed(2),
           getPercentage(elem, array).toFixed(2) + ' %'
@@ -139,7 +139,7 @@ const Graph = () => {
         tables.map((table, tableIndex) => {
           const tableKey = 'hw2-table' + table.title + tableIndex;
 
-          const generateRow = (row: (string | number)[]) => {
+          const generateRow = (row: (string | number | JSX.Element)[]) => {
             return row.map((col, colIndex) => {
               const colKey = 'column-' + colIndex;
               return <td
