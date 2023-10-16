@@ -1,4 +1,5 @@
 import { HomeworkModel } from "../../models/homework";
+import { createLink } from "../../utils/functions";
 import Graph from "./application/hw2/Graph";
 
 const question1 = <>
@@ -38,7 +39,7 @@ const data: HomeworkModel = {
     },
     {
       question: question2,
-      answer: ''
+      answer: <>The cheatsheet is accessible through this {createLink('link', 'https://gitlab.com/homeworks2282541/homework-2/cheatsheet')}.</>
     },
     {
       question: 'Generate N uniform random variates in [0,1) and determine the distribution into class intervals [i/k, (i+1)/k), i = 0,..., k-1.'
