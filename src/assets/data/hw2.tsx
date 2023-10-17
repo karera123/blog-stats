@@ -1,6 +1,7 @@
 import { HomeworkModel } from "../../models/homework";
 import { createLink } from "../../utils/functions";
 import Graph from "./application/hw2/Graph";
+import RandomVariates from "./application/hw2/RandomVariates";
 
 const question1 = <>
   Choose 3 variables from our surveys: <br />
@@ -44,7 +45,7 @@ const data: HomeworkModel = {
     {
       question: 'Generate N uniform random variates in [0,1) and determine the distribution into class intervals [i/k, (i+1)/k), i = 0,..., k-1.'
         + 'Play with N and k values and draw some conclusion on the "shape" of the distribution.',
-      answer: ''
+      answer: <RandomVariates />
     }
   ],
   applications: []
