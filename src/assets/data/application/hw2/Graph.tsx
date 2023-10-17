@@ -123,7 +123,7 @@ const Graph = () => {
 
   return (
     <div>
-      "Professional Life" survey will be used as a dataset for this homework. The file is available {createLink('here', '#')}.
+      "Professional Life" survey will be used as a dataset for this homework. The file is available {createLink('here', 'https://gitlab.com/homeworks2282541/homework-2/random-variables/js/-/tree/main')}.
       <br />
       {/**
        * 3 Variables (frequencies)
