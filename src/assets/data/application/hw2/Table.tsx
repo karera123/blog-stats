@@ -2,14 +2,14 @@ import React from 'react'
 import { createLink } from '../../../../utils/functions';
 import Papa from 'papaparse';
 
-interface Table {
+interface TableData {
   title: string,
   data: (string | number | JSX.Element)[][]
 }
 
-const Graph = () => {
+const Table = () => {
   const [csv, setCsv] = React.useState<string[]>([]);
-  const [tables, setTables] = React.useState<Table[]>([]);
+  const [tables, setTables] = React.useState<TableData[]>([]);
 
   const isCounted = React.useCallback((elem: string, ref: string) => elem === ref, []);
 
@@ -185,4 +185,4 @@ const Graph = () => {
   );
 }
 
-export default Graph
+export default Table

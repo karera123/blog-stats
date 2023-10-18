@@ -1,6 +1,6 @@
 import { HomeworkModel } from "../../models/homework";
 import { createLink } from "../../utils/functions";
-import Graph from "./application/hw2/Graph";
+import Table from "./application/hw2/Table";
 import RandomVariates from "./application/hw2/RandomVariates";
 
 const question1 = <>
@@ -36,7 +36,7 @@ const data: HomeworkModel = {
   theories: [
     {
       question: question1,
-      answer: <Graph />
+      answer: <Table />
     },
     {
       question: question2,
