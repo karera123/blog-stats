@@ -44,7 +44,7 @@ const RandomVariates = () => {
 
   return (
     <div className='w-full'>
-      <span>The code is available {createLink('here', 'https://gitlab.com/homeworks2282541/homework-2/random-variates-class-interval/js/-/tree/main')}.</span>
+      <span>The code is available {createLink('here', 'https://gitlab.com/homeworks2282541/homework-2/random-variates-class-interval')}.</span>
       <br />
       <div className='mb-4'>
         <code>Random Variate Count </code>
