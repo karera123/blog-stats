@@ -1,5 +1,4 @@
 import { HomeworkModel } from "../../models/homework";
-import { createLink } from "../../utils/functions";
 
 const question1 = <div className="font-normal px-5 text-justify">
   <strong>Part a</strong><br />
