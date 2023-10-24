@@ -69,6 +69,7 @@ const Homework = () => {
       {/* Theory */}
       {
         homework?.theories && homework?.theories.length > 0 &&
+        homework?.applications && homework?.applications.length > 0 &&
         <div className='font-serif font-semibold mt-10 text-xl'>
           Theory
         </div>
@@ -114,6 +115,7 @@ const Homework = () => {
 
       {/* Application */}
       {
+        homework?.theories && homework?.theories.length > 0 &&
         homework?.applications && homework?.applications.length > 0 &&
         <div className='font-serif font-semibold mt-16 text-xl'>
           Application
