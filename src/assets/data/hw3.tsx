@@ -37,7 +37,7 @@ const question2 = <span className="font-normal text-justify">
 </span>
 
 const data: HomeworkModel = {
-  title: 'Homework 3 - 23/10/2023',
+  title: 'Homework 3',
   theories: [
     {
       question: question1,

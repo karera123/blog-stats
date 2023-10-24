@@ -3,7 +3,7 @@ import CSharp from "./application/hw1/CSharp";
 import CanvasHw1 from "./application/hw1/Canvas";
 
 const data: HomeworkModel = {
-  "title": "Homework 1 - 05/10/2023",
+  "title": "Homework 1",
   "theories": [
     {
       "question": "What is statistics and its relationship with other disciplines? Difference between descriptive and inferential statistics.",

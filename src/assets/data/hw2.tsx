@@ -32,7 +32,7 @@ const question2 = <>
 </>
 
 const data: HomeworkModel = {
-  title: 'Homework 2 - 15/10/2023',
+  title: 'Homework 2',
   theories: [
     {
       question: question1,
